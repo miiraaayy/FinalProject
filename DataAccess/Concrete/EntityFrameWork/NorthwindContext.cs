@@ -7,7 +7,7 @@ using System.Text;
 namespace DataAccess.Concrete.EntityFrameWork
 {
    //Context : Db tabloları ile proje bağlamak
-   public class NortwinContext:DbContext
+   public class NorthwindContext:DbContext
    {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

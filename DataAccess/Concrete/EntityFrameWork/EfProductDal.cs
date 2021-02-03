@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFrameWork
         public void Add(Product entity)
         {
             //IDısposable pattern implementation of c# (using!Araştır)
-            using (NortwinContext context = new NortwinContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
@@ -25,7 +25,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 
         public void Delete(Product entity)
         {
-            using (NortwinContext context = new NortwinContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
@@ -35,7 +35,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 
         public Product Get(Expression<Func<Product, bool>> filter)
         {
-            using (NortwinContext context  = new NortwinContext())
+            using (NorthwindContext context  = new NorthwindContext())
             {
                 return context.Set<Product>().SingleOrDefault(filter);
 
@@ -44,7 +44,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            using (NortwinContext context = new NortwinContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
                 return filter == null ? context.Set<Product>().ToList() : context.Set<Product>().Where(filter).ToList();
             }
@@ -52,7 +52,7 @@ namespace DataAccess.Concrete.EntityFrameWork
 
         public void Update(Product entity)
         {
-            using (NortwinContext context = new NortwinContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
